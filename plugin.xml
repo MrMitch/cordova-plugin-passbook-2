@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-           id="cordova-plugin-passbook"
+           id="cordova-plugin-passbook-2"
       version="0.3.0">
 
     <name>Passbook</name>
@@ -27,11 +27,11 @@
 
         <header-file src="src/ios/CDVPassbook.h" />
         <source-file src="src/ios/CDVPassbook.m" />
-    
+
         <framework src="PassKit.framework" />
 
     </platform>
-    
+
     <config-file target="*-Debug.plist" parent="com.apple.developer.pass-type-identifiers">
         <array>
             <string>$(TeamIdentifierPrefix)*</string>
@@ -42,5 +42,5 @@
             <string>$(TeamIdentifierPrefix)*</string>
         </array>
     </config-file>
-    
+
 </plugin>
