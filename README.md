@@ -1,4 +1,4 @@
-# cordova-plugin-passbook-2
+# cordova-plugin-apple-wallet-passes
 
 This plugin provides support for showing Passbook passes to your users and allows them to add it to their native Wallet (regardless of how you create your passes, whether you do it on your own or using any third-party services like [PassSlot](http://www.PassSlot.com))
 
@@ -9,7 +9,7 @@ This plugin provides support for showing Passbook passes to your users and allow
 ## Installation
 
 ```
-cordova plugin add cordova-plugin-passbook-2
+cordova plugin add cordova-plugin-apple-wallet-passes
 ```
 
 Or the latest (unstable) version:

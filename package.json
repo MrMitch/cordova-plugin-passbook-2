@@ -1,9 +1,9 @@
 {
-  "name": "cordova-plugin-passbook-2",
-  "version": "0.0.3",
+  "name": "cordova-plugin-apple-wallet-passes",
+  "version": "0.0.4",
   "description": "This plugin allows you to add passes to Passbook",
   "cordova": {
-    "id": "cordova-plugin-passbook-2",
+    "id": "cordova-plugin-apple-wallet-passes",
     "platforms": [
       "ios"
     ]

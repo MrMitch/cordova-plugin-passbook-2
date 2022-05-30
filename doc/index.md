@@ -1,4 +1,4 @@
-# cordova-plugin-passbook
+# cordova-plugin-apple-wallet-passes
 
 This plugin provides basic support for Passbook on iOS.
 It allows you to show Passbook passes so that your users can add them directly to Passbook.
@@ -7,7 +7,9 @@ On cordova >= 3.1.0, this plugin registers for .pkpass URLs and automatically do
 
 ## Installation
 
-    cordova plugin add cordova-plugin-passbook-2
+```
+cordova plugin add cordova-plugin-apple-wallet-passes
+```
 
 ## Supported Platforms
 
