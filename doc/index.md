@@ -154,10 +154,11 @@ function onError(error) {
   alert('Could now show passes: ' + error);
 }
 
-var callData =  {
-                 "urls":['https://d.pslot.io/cQY2f', 'https://d.pslot.io/DbM3E'],
-                 "headers":{ "authorization": "Bearer <token>" }
-               };
+var callData = {
+    urls: [ 'https://d.pslot.io/cQY2f', 'https://d.pslot.io/DbM3E' ],
+    headers: { authorization: 'Bearer <token>' },
+};
+
 Passbook.downloadPasses(callData, onSuccess, onError);
 ```
 
