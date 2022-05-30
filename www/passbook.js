@@ -43,7 +43,7 @@ passbook.available = function (resultCallback) {
 };
 /**
  *
- * @param {Object}  url:String | { url:String, headers?:Object }
+ * @param {{ url:String, headers?: Object }} callData
  * @param {Function} passCallback
  * @param {Function} errorCallback
  */
@@ -70,7 +70,7 @@ passbook.downloadPasses = function (callData, passCallback, errorCallback) {
         }
     }, errorCallback, "Passbook", "downloadPasses", [callData]);
 };
-               
+
 
 /**
  *
@@ -93,15 +93,15 @@ passbook.addPass = function (file, passCallback, errorCallback) {
  * @param {Function} passCallback
  * @param {Function} errorCallback
  */
-passbook.addPasses = function (file, passCallback, errorCallback) {
+passbook.addPasses = function (files, passCallback, errorCallback) {
     exec(function (result) {
         if (typeof(passCallback) === 'function') {
             var passes = result.passes;
             passCallback(toPassArray(passes), result.added);
         }
-    }, errorCallback, "Passbook", "addPasses", [file]);
+    }, errorCallback, "Passbook", "addPasses", [files]);
 };
-               
+
 /**
  *
  * @param {Pass|string} passOrUrl

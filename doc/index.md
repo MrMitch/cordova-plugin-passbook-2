@@ -7,7 +7,7 @@ On cordova >= 3.1.0, this plugin registers for .pkpass URLs and automatically do
 
 ## Installation
 
-    cordova plugin add cordova-plugin-passbook
+    cordova plugin add cordova-plugin-passbook-2
 
 ## Supported Platforms
 
@@ -17,7 +17,10 @@ On cordova >= 3.1.0, this plugin registers for .pkpass URLs and automatically do
 
 - Passbook.available
 - Passbook.downloadPass
-
+- Passbook.downloadPasses
+- Passbook.addPass
+- Passbook.addPasses
+- Passbook.openPass
 
 ## Passbook.available
 
@@ -31,6 +34,7 @@ Returns if Passbook is available on the current device to the `resultCallback` c
 
 
 ### Example
+
 ```javascript
 // onSuccess Callback
 // This method accepts a boolean, which specified if Passbook is available
@@ -47,6 +51,7 @@ Passbook.available(onResult);
 
 Downloads a pass from a the provided URL and shows it to the user.
 When the pass was successfully downloaded and was shown to the user, and the user either canceld or added the pass, the `passCallback` callback executes. If there is an error, the `errorCallback` callback executes with an error string as the parameter
+
 ```javascript
 Passbook.downloadPass(callData, [passCallback], [errorCallback]);
 ```
@@ -94,9 +99,9 @@ function onError(error) {
 }
 
 var callData =  {
-                 "url":'https://d.pslot.io/cQY2f',
-                 "headers":{ "authorization": "Bearer <token>" }
-               };
+    url: 'https://d.pslot.io/cQY2f',
+    headers: { "authorization": "Bearer <token>" }
+};
 Passbook.downloadPass(callData, onSuccess, onError);
 ```
 
@@ -104,6 +109,7 @@ Passbook.downloadPass(callData, onSuccess, onError);
 
 Downloads a list of passes from a the provided URLs and shows them to the user.
 When the passes are successfully downloaded, shown to the user, and the user either cancelled or added the pass, the `passCallback` callback executes passing an array of passes and a boolean of value of if they were added or not. If there is an error, the `errorCallback` callback executes with an error string as the parameter
+
 ```javascript
 Passbook.downloadPasses(callData, [passCallback], [errorCallback]);
 ```
@@ -159,6 +165,7 @@ Passbook.downloadPasses(callData, onSuccess, onError);
 
 Add a pass from a the provided local file and shows it to the user.
 When the pass was successfully shown to the user, and the user either canceled or added the pass, the `passCallback` callback executes. If there is an error, the `errorCallback` callback executes with an error string as the parameter
+
 ```javascript
 Passbook.addPass(file, [passCallback], [errorCallback]);
 ```
@@ -172,6 +179,7 @@ Passbook.addPass(file, [passCallback], [errorCallback]);
 
 
 ### Example
+
 ```javascript
 // onSuccess Callback
 function onSuccess(pass, added) {
@@ -191,6 +199,7 @@ Passbook.addPass(cordova.file.applicationDirectory + 'sample.pkpass', onSuccess,
 
 Add a list of passes from a the provided local files and shows it to the user.
 When the passes are successfully shown to the user, and the user either cancelled or added the passes, the `passCallback` callback executes. If there is an error, the `errorCallback` callback executes with an error string as the parameter
+
 ```javascript
 Passbook.addPass(files, [passCallback], [errorCallback]);
 ```
@@ -204,6 +213,7 @@ Passbook.addPass(files, [passCallback], [errorCallback]);
 
 
 ### Example
+
 ```javascript
 // onSuccess Callback
 function onSuccess(passes, added) {
